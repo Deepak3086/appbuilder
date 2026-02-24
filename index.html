@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Progress Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gym Progress Tracker</h1>
+      <p>Log workouts, monitor strength, and stay consistent.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Add Workout Entry</h2>
+        <form id="workout-form">
+          <div class="field-grid">
+            <label>
+              Date
+              <input type="date" id="date" required />
+            </label>
+            <label>
+              Exercise
+              <input type="text" id="exercise" placeholder="e.g. Bench Press" required />
+            </label>
+            <label>
+              Sets
+              <input type="number" id="sets" min="1" max="20" required />
+            </label>
+            <label>
+              Reps
+              <input type="number" id="reps" min="1" max="100" required />
+            </label>
+            <label>
+              Weight (kg)
+              <input type="number" id="weight" min="0" step="0.5" required />
+            </label>
+            <label>
+              Body Weight (kg)
+              <input type="number" id="bodyweight" min="0" step="0.1" />
+            </label>
+          </div>
+          <button type="submit">Save Entry</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Your Progress</h2>
+          <div class="actions">
+            <button id="load-demo" type="button">Load Demo Data</button>
+            <button id="clear-data" class="danger" type="button">Clear All Data</button>
+          </div>
+        </div>
+        <div class="stats" id="stats"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Exercise</th>
+                <th>Sets × Reps</th>
+                <th>Weight</th>
+                <th>Volume</th>
+                <th>Body Weight</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="workout-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>1RM Estimate Trend</h2>
+        <p class="subtle">Formula: estimated 1RM = weight × (1 + reps/30).</p>
+        <canvas id="progress-chart" width="900" height="280" aria-label="1RM trend chart"></canvas>
+      </section>
+    </main>
+
+    <template id="row-template">
+      <tr>
+        <td data-col="date"></td>
+        <td data-col="exercise"></td>
+        <td data-col="setsReps"></td>
+        <td data-col="weight"></td>
+        <td data-col="volume"></td>
+        <td data-col="bodyweight"></td>
+        <td><button type="button" class="danger delete-btn">Delete</button></td>
+      </tr>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
