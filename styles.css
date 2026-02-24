@@ -1,0 +1,163 @@
+:root {
+  color-scheme: light;
+  --bg: #eef2f7;
+  --card: #ffffff;
+  --text: #1e293b;
+  --subtle: #64748b;
+  --primary: #2563eb;
+  --danger: #dc2626;
+  --line: #c7d2e3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.4vw, 3rem);
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  color: #526581;
+  font-size: 1.05rem;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
+}
+
+.field-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+input {
+  border: 1px solid #b9c7df;
+  border-radius: 0.45rem;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.95rem;
+}
+
+button {
+  margin-top: 0.8rem;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  margin-top: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.6rem;
+  margin: 0.8rem 0;
+}
+
+.stat {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 0.65rem;
+  background: #f8fbff;
+}
+
+.stat .label {
+  font-size: 0.8rem;
+  color: var(--subtle);
+}
+
+.stat .value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+th,
+td {
+  padding: 0.55rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.subtle {
+  color: #526581;
+  margin-top: 0;
+}
+
+canvas {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom, #fcfdff, #f3f7fd);
+}
